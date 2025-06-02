@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 1198c66a55d21694ab64bd8cb9ebf015
+guid: f55985e03685f8142917df74f0fc75cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2276138821381322966
-    second: Owlet_Monster_Idle_4_0
+      213: -5502655003594241538
+    second: Owlet_Monster_Jump_8_0
   - first:
-      213: 1316493835247018082
-    second: Owlet_Monster_Idle_4_1
+      213: 628606537094413094
+    second: Owlet_Monster_Jump_8_1
   - first:
-      213: 9140244220393237851
-    second: Owlet_Monster_Idle_4_2
+      213: -8009425588462539330
+    second: Owlet_Monster_Jump_8_2
   - first:
-      213: -5013709923269499922
-    second: Owlet_Monster_Idle_4_3
+      213: -6402977188262660969
+    second: Owlet_Monster_Jump_8_3
+  - first:
+      213: -4848999789554754339
+    second: Owlet_Monster_Jump_8_4
+  - first:
+      213: -408064886110773218
+    second: Owlet_Monster_Jump_8_5
+  - first:
+      213: -6000117232762632187
+    second: Owlet_Monster_Jump_8_6
+  - first:
+      213: 526077734079534435
+    second: Owlet_Monster_Jump_8_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -122,89 +134,177 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Owlet_Monster_Idle_4_0
+      name: Owlet_Monster_Jump_8_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 0
         y: 0
-        width: 23
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a27071c2dc78960e0800000000000000
-      internalID: -2276138821381322966
+      spriteID: f83f85fc69090ba48bf6f8f991a32cdd
+      internalID: 261832908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owlet_Monster_Idle_4_1
+      name: Owlet_Monster_Jump_8_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 32
         y: 0
-        width: 22
-        height: 28
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 260e3e60b20254210800000000000000
-      internalID: 1316493835247018082
+      spriteID: 69dd4a9e29f845d408659fd4bb359f80
+      internalID: 1774060247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owlet_Monster_Idle_4_2
+      name: Owlet_Monster_Jump_8_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 64
         y: 0
-        width: 23
-        height: 28
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b5d2bdcf0bba8de70800000000000000
-      internalID: 9140244220393237851
+      spriteID: 29fb41f8138996d4fa2aa7f0d3c34aeb
+      internalID: 1756604621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Owlet_Monster_Idle_4_3
+      name: Owlet_Monster_Jump_8_3
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 0
-        width: 24
-        height: 27
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ee3aba87369bb6ab0800000000000000
-      internalID: -5013709923269499922
+      spriteID: 975834bab4003b7459d25ec6d03138d7
+      internalID: -1330411478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owlet_Monster_Jump_8_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b8a6bb9f969c74b94fe105d1d60cc3
+      internalID: 2054999567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owlet_Monster_Jump_8_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c33bdf5f555ac04bae59900fd3b4236
+      internalID: 949071850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owlet_Monster_Jump_8_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683f665fef918eb41bb59d7153d2488a
+      internalID: 1921135736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Owlet_Monster_Jump_8_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a03fe3568864b47ab13131d0ec8397
+      internalID: -1077057685
       vertices: []
       indices: 
       edges: []
@@ -213,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b397dc2b0dae28c4c9d04bca32c95a07
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +323,14 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Owlet_Monster_Idle_4_0: -2276138821381322966
-      Owlet_Monster_Idle_4_1: 1316493835247018082
-      Owlet_Monster_Idle_4_2: 9140244220393237851
-      Owlet_Monster_Idle_4_3: -5013709923269499922
+      Owlet_Monster_Jump_8_0: 261832908
+      Owlet_Monster_Jump_8_1: 1774060247
+      Owlet_Monster_Jump_8_2: 1756604621
+      Owlet_Monster_Jump_8_3: -1330411478
+      Owlet_Monster_Jump_8_4: 2054999567
+      Owlet_Monster_Jump_8_5: 949071850
+      Owlet_Monster_Jump_8_6: 1921135736
+      Owlet_Monster_Jump_8_7: -1077057685
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
