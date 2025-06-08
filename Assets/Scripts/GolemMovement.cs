@@ -74,7 +74,7 @@ public class MeleeEnemy : MonoBehaviour
             Flip();
         } 
 
-        while (Vector2.Distance(transform.position,  targetPosition) > 0.1f)
+        while (Vector2.Distance(transform.position,  targetPosition) > 0.3f)
         {
             transform.Translate(Vector2.right * transform.localScale.x * dashSpeed * Time.deltaTime);
             yield return null;
