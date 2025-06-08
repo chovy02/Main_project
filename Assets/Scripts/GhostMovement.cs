@@ -1,46 +1,82 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class GhostMovement : MonoBehaviour
 {
-    [SerializeField] private float speed = 2f;
-    [SerializeField] private float distance = 1f;
-    private Vector3 startPos;
-    private bool movingRight = true;
-    void Start()
+    [Header("Attack Parameters")]
+    [SerializeField] private float attackCooldown;
+    [SerializeField] private float range;
+    [SerializeField] private int damage;
+
+    [Header("Ranged Attack")]
+    [SerializeField] private Transform firepoint;
+    [SerializeField] private GameObject[] ghostOrbs;
+
+    [Header("Collider Parameters")]
+    [SerializeField] private float colliderDistance;
+    [SerializeField] private BoxCollider2D boxCollider;
+
+    [Header("Player Layer")]
+    [SerializeField] private LayerMask playerLayer;
+    private float cooldownTimer = Mathf.Infinity;
+
+    //References
+    private Animator anim;
+    private EnemyPatrol enemyPatrol;
+
+    private void Awake()
     {
-        startPos = transform.position;
+        anim = GetComponent<Animator>();
+        enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        float leftBound = startPos.x - distance;
-        float rightBound = startPos.x + distance;
-        if (movingRight)
+        cooldownTimer += Time.deltaTime;
+
+        //Attack only when player in sight?
+        if (PlayerInSight())
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime);
-            if (transform.position.x >= rightBound)
+            if (cooldownTimer >= attackCooldown)
             {
-                movingRight = false;
-                Flip();
+                cooldownTimer = 0;
+                anim.SetTrigger("attack");
+                RangedAttack();
             }
         }
 
-        else
-        {
-            transform.Translate(Vector2.left * speed * Time.deltaTime);
-            if (transform.position.x <= leftBound)
-            {
-                movingRight = true;
-                Flip();
-            }
-        }
+        if (enemyPatrol != null)
+            enemyPatrol.enabled = !PlayerInSight();
     }
 
-    void Flip()
+    private void RangedAttack()
     {
-        Vector3 scaler = transform.localScale;
-        scaler.x *= -1;
-        transform.localScale = scaler;
+        cooldownTimer = 0;
+        ghostOrbs[FindGhostOrb()].transform.position = firepoint.position;
+        ghostOrbs[FindGhostOrb()].GetComponent<EnemyProjectile>().ActivateProjectile();
+    }
+    private int FindGhostOrb()
+    {
+        for (int i = 0; i < ghostOrbs.Length; i++)
+        {
+            if (!ghostOrbs[i].activeInHierarchy)
+                return i;
+        }
+        return 0;
+    }
+
+    private bool PlayerInSight()
+    {
+        RaycastHit2D hit =
+            Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
+            0, Vector2.left, 0, playerLayer);
+
+        return hit.collider != null;
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * transform.localScale.x * colliderDistance,
+            new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 }
