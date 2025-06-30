@@ -50,13 +50,12 @@ public class PlayerController : MonoBehaviour
             doubleJump = false;
         }
 
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             canDoubleJump = true;
         }
-
-        else if (Input.GetButtonDown("Jump") && canDoubleJump)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && canDoubleJump)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             canDoubleJump = false;
