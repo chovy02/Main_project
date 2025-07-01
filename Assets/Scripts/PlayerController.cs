@@ -3,9 +3,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 2f;
+    [SerializeField] private float jumpForce = 7f;
     private bool isGrounded;
-    private bool canDoubleJump;
+    private bool hasJumpedInAir;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     private Animator animator;
@@ -20,12 +20,6 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         HandleMovement();
@@ -37,8 +31,11 @@ public class PlayerController : MonoBehaviour
     {
         float moveInput = Input.GetAxis("Horizontal");
         rb.linearVelocity = new Vector2(moveSpeed * moveInput, rb.linearVelocity.y);
-        if (moveInput < 0) rb.transform.localScale = new Vector3(-1, 1, 1);
-        else if (moveInput > 0) rb.transform.localScale = new Vector3(1, 1, 1);
+
+        if (moveInput < 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (moveInput > 0)
+            transform.localScale = new Vector3(1, 1, 1);
     }
 
     private void HandleJump()
@@ -47,19 +44,22 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded)
         {
+            hasJumpedInAir = false;
             doubleJump = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            canDoubleJump = true;
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && canDoubleJump)
-        {
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-            canDoubleJump = false;
-            doubleJump = true;
+            if (isGrounded)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            }
+            else if (!isGrounded && !hasJumpedInAir)
+            {
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+                hasJumpedInAir = true;
+                doubleJump = true;
+            }
         }
     }
 
