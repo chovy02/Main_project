@@ -21,7 +21,7 @@ public class WeaponManager : MonoBehaviour
 
     private Animator animator;
     private bool hasBow = false;
-    private bool hasSword = true;
+    private bool hasSword = false;
 
     private void Awake()
     {
@@ -31,19 +31,35 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && hasBow)
-            EquipWeapon(WeaponType.Bow);
-        if (Input.GetKeyDown(KeyCode.Z) && hasSword)
-            EquipWeapon(WeaponType.Sword);
-        //if (Input.GetKeyDown(KeyCode.Z))
-        //    EquipWeapon(WeaponType.None);
+        // Only allow switching when both weapons are available
+        if (hasBow && hasSword && Input.GetKeyDown(KeyCode.Z))
+        {
+            if (currentWeapon == WeaponType.Sword)
+                EquipWeapon(WeaponType.Bow);
+            else if (currentWeapon == WeaponType.Bow)
+                EquipWeapon(WeaponType.Sword);
+        }
     }
 
     public void PickUpWeapon(WeaponType weapon)
     {
-        if (weapon == WeaponType.Bow) hasBow = true;
-        if (weapon == WeaponType.Sword) hasSword = true;
-        EquipWeapon(weapon);
+        // Pick up and auto-equip if not already equipped
+        if (weapon == WeaponType.Bow && !hasBow)
+        {
+            hasBow = true;
+
+            // If currently unarmed or only had one weapon before
+            if (currentWeapon == WeaponType.None || !hasSword)
+                EquipWeapon(WeaponType.Bow);
+        }
+
+        if (weapon == WeaponType.Sword && !hasSword)
+        {
+            hasSword = true;
+
+            if (currentWeapon == WeaponType.None || !hasBow)
+                EquipWeapon(WeaponType.Sword);
+        }
     }
 
     public void EquipWeapon(WeaponType weapon)
@@ -69,6 +85,4 @@ public class WeaponManager : MonoBehaviour
         //bowHitbox.SetActive(false);
         //swordHitbox.SetActive(false);
     }
-
-
 }
