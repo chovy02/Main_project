@@ -9,6 +9,7 @@ public class MeleeEnemy : MonoBehaviour
     [SerializeField] private float dashRange = 5f;
     [SerializeField] private float slashRange = 2f;
     [SerializeField] private float dashSpeed = 5f;
+    [SerializeField] private float damage = 15;
 
     [Header("Collider Parameters")]
     [SerializeField] private float dashColliderDistance = 1f;
@@ -97,9 +98,14 @@ public class MeleeEnemy : MonoBehaviour
 
     private void takeDamage()
     {
-        if (PlayerInRange(slashRange, slashColliderDistance))
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * transform.localScale.x * slashColliderDistance, new Vector3(boxCollider.bounds.size.x * slashRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z), 0, Vector2.left, 0, playerLayer);
+        if (hit.collider != null)
         {
-            Debug.Log("Slashed");
+            Health playerHealth = hit.collider.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damage);
+            }
         }
     }
 

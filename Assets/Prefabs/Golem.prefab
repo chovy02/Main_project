@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5944106094179011407}
   - component: {fileID: 1671179769100993015}
   - component: {fileID: 8282153690518044612}
-  m_Layer: 0
+  - component: {fileID: 6663203775950955125}
+  m_Layer: 8
   m_Name: Golem
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -77,7 +78,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1241024927
-  m_SortingLayer: 1
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 1240378573, guid: d40b51298dd1e4f40ad46b328196bf30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,3 +182,18 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &6663203775950955125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652682033833427077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c244b6aa06bd640b88a6f4e1a083c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 30
+  iFramesDuration: 0.6
+  numberOfFlashes: 3

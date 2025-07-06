@@ -57,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (hit.collider != null)
         {
-            hit.collider.GetComponent<Health>()?.TakeDamage(damage);
+            hit.collider.GetComponent<EnemyHealth>()?.TakeDamage(damage);
         }
     }
 

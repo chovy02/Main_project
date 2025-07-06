@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyProjectile : MonoBehaviour
+public class EnemyProjectile : EnemyDamage
 {
     [SerializeField] private float speed;
     [SerializeField] private float resetTime;
@@ -36,14 +36,17 @@ public class EnemyProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        hit = true;
-        //base.OnTriggerEnter2D(collision); //Execute logic from parent script first
-        coll.enabled = false;
+        if (collision.CompareTag("Player"))
+        {
+            hit = true;
+            base.OnTriggerEnter2D(collision); //Execute logic from parent script first
+            coll.enabled = false;
 
-        if (anim != null)
-            anim.SetTrigger("explode"); //When the object is a fireball explode it
-        else
-            gameObject.SetActive(false); //When this hits any object deactivate arrow
+            if (anim != null)
+                anim.SetTrigger("explode"); //When the object is a fireball explode it
+            else
+                gameObject.SetActive(false); //When this hits any object deactivate arrow
+        }
     }
     private void Deactivate()
     {

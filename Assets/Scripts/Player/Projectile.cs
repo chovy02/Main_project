@@ -32,7 +32,7 @@ public class Projectile : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & enemyLayer) != 0)
         {
-            collision.GetComponent<Health>()?.TakeDamage(damage);
+            collision.GetComponent<EnemyHealth>()?.TakeDamage(damage);
             hit = true;
             gameObject.SetActive(false);
         }

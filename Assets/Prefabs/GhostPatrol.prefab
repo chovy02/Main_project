@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 6079362474162769232}
   - component: {fileID: 4326013895315078274}
   - component: {fileID: 1588847702362997325}
-  m_Layer: 0
+  - component: {fileID: 4194842329745367721}
+  - component: {fileID: 540898355155675098}
+  m_Layer: 8
   m_Name: Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -191,6 +193,48 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &4194842329745367721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364411364051253532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0c244b6aa06bd640b88a6f4e1a083c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 40
+  iFramesDuration: 0.6
+  numberOfFlashes: 3
+--- !u!50 &540898355155675098
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364411364051253532}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2140417513857259943
 GameObject:
   m_ObjectHideFlags: 0
