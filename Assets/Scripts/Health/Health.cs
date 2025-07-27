@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Health : MonoBehaviour
 {
-    [Header ("Health")]
+    [Header("Health")]
     [SerializeField] private float startingHealth;
-    public float currentHealth {get; private set;}
+    public float currentHealth { get; private set; }
     private Animator animator;
     private bool dead;
 
@@ -17,6 +17,9 @@ public class Health : MonoBehaviour
     [Header("Components")]
     private bool invulnerable;
 
+    [Header("Game Over")]
+    [SerializeField] private GameOver gameover;  
+
     private void Awake()
     {
         currentHealth = startingHealth;
@@ -27,7 +30,9 @@ public class Health : MonoBehaviour
     public void TakeDamage(float _damage)
     {
         if (invulnerable) return;
+
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+
         if (currentHealth > 0)
         {
             animator.SetTrigger("hurt");
@@ -40,8 +45,8 @@ public class Health : MonoBehaviour
                 animator.SetTrigger("die");
                 GetComponent<PlayerController>().enabled = false;
                 dead = true;
-            }
 
+                gameover.SetUp();            }
         }
     }
 
@@ -64,4 +69,6 @@ public class Health : MonoBehaviour
         Physics2D.IgnoreLayerCollision(7, 8, false);
         invulnerable = false;
     }
+
+    
 }
