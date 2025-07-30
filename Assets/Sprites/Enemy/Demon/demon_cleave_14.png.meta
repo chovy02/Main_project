@@ -122,12 +122,12 @@ TextureImporter:
       name: demon_cleave_14_1
       rect:
         serializedVersion: 2
-        x: 99
+        x: 108
         y: 0
         width: 81
         height: 103
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5073649, y: 0.4787628}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

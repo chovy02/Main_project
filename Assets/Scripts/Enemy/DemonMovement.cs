@@ -59,7 +59,7 @@ public class DemonMovement : MonoBehaviour
 
         float distanceToPlayer = Mathf.Abs(playerX - enemyX);
 
-        if (distanceToPlayer > attackRange)
+        if (!PlayerInAttackRange())
         {
             animator.SetBool("move", true);
 
@@ -98,6 +98,15 @@ public class DemonMovement : MonoBehaviour
     private bool PlayerInRange()
     {
         return player.position.x >= leftBound.position.x && player.position.x <= rightBound.position.x;
+    }
+
+    private bool PlayerInAttackRange()
+    {
+        RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * transform.localScale.x * attackColliderDistance,
+            new Vector3(boxCollider.bounds.size.x * attackRange, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
+            0, Vector2.left, 0, playerLayer);
+
+        return hit.collider != null;
     }
 
     private void Attack()

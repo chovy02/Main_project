@@ -122,12 +122,12 @@ TextureImporter:
       name: demon_death_6_0
       rect:
         serializedVersion: 2
-        x: 117
+        x: 75
         y: 0
         width: 97
         height: 114
       alignment: 9
-      pivot: {x: 0.3954463, y: 0.50872165}
+      pivot: {x: 0.6394043, y: 0.49476674}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

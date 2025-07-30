@@ -116,12 +116,12 @@ TextureImporter:
       name: demon_cleave_9_0
       rect:
         serializedVersion: 2
-        x: 116
+        x: 84
         y: 0
         width: 88
         height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49548045, y: 0.49120095}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b65ef23e3b26c62459b0c7190c4fb4e3
     internalID: 0
     vertices: []
     indices: 
