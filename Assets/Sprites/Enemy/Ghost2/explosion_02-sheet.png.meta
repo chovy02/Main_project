@@ -1,0 +1,342 @@
+fileFormatVersion: 2
+guid: 104034b6d32de8b4f89a32d7e3d01be3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8950719284187253949
+    second: explosion_02-sheet_0
+  - first:
+      213: -1886163051210248230
+    second: explosion_02-sheet_1
+  - first:
+      213: 3423453980923455489
+    second: explosion_02-sheet_2
+  - first:
+      213: -1886829478599861400
+    second: explosion_02-sheet_3
+  - first:
+      213: -6697954368979284922
+    second: explosion_02-sheet_4
+  - first:
+      213: -5459119955348852269
+    second: explosion_02-sheet_5
+  - first:
+      213: -8640816148497961266
+    second: explosion_02-sheet_6
+  - first:
+      213: 8998067624214275638
+    second: explosion_02-sheet_7
+  - first:
+      213: -7295634050249915333
+    second: explosion_02-sheet_8
+  - first:
+      213: 3509474280043130094
+    second: explosion_02-sheet_9
+  - first:
+      213: -1616491037859366678
+    second: explosion_02-sheet_10
+  - first:
+      213: 7843874493071628537
+    second: explosion_02-sheet_11
+  - first:
+      213: -4153396875872378514
+    second: explosion_02-sheet_12
+  - first:
+      213: -4270807577505795148
+    second: explosion_02-sheet_13
+  - first:
+      213: 3883015088175744321
+    second: explosion_02-sheet_14
+  - first:
+      213: -7449774879781309885
+    second: explosion_02-sheet_15
+  - first:
+      213: -1850579702937173704
+    second: explosion_02-sheet_16
+  - first:
+      213: -948341356218250266
+    second: explosion_02-sheet_17
+  - first:
+      213: 4440546854232257370
+    second: explosion_02-sheet_18
+  - first:
+      213: 5928254332011460689
+    second: explosion_02-sheet_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 40
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: explosion_02-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1
+        width: 167
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbc483a14c7573c70800000000000000
+      internalID: 8950719284187253949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_02-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 18
+        width: 190
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64cc63b1df51c03a0800000000000000
+      internalID: -6697954368979284922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_02-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 81
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d17f23035f4d34b0800000000000000
+      internalID: -5459119955348852269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_02-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 10
+        width: 109
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecee1537e77a51880800000000000000
+      internalID: -8640816148497961266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_02-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 0
+        width: 171
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6362c3694de8fdc70800000000000000
+      internalID: 8998067624214275638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosion_02-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 15
+        width: 55
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b378bec22b0bb4c0800000000000000
+      internalID: -4270807577505795148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 41dc1cbacf87bdd45af7cb3055b2e015
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      explosion_02-sheet_0: 8950719284187253949
+      explosion_02-sheet_1: -1886163051210248230
+      explosion_02-sheet_10: -1616491037859366678
+      explosion_02-sheet_11: 7843874493071628537
+      explosion_02-sheet_12: -4153396875872378514
+      explosion_02-sheet_13: -4270807577505795148
+      explosion_02-sheet_14: 3883015088175744321
+      explosion_02-sheet_15: -7449774879781309885
+      explosion_02-sheet_16: -1850579702937173704
+      explosion_02-sheet_17: -948341356218250266
+      explosion_02-sheet_18: 4440546854232257370
+      explosion_02-sheet_19: 5928254332011460689
+      explosion_02-sheet_2: 3423453980923455489
+      explosion_02-sheet_3: -1886829478599861400
+      explosion_02-sheet_4: -6697954368979284922
+      explosion_02-sheet_5: -5459119955348852269
+      explosion_02-sheet_6: -8640816148497961266
+      explosion_02-sheet_7: 8998067624214275638
+      explosion_02-sheet_8: -7295634050249915333
+      explosion_02-sheet_9: 3509474280043130094
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
