@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyHealth : MonoBehaviour
 {
     [Header("Health")]
-    [SerializeField] private float startingHealth;
+    public float startingHealth;
     public float currentHealth { get; private set; }
     private Animator animator;
     private bool dead;
@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (invulnerable) return;
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+        Debug.Log($"[Boss] HP: {currentHealth} / {startingHealth}"); //Delete after
         if (currentHealth > 0)
         {
             animator.SetTrigger("hurt");
@@ -68,4 +69,19 @@ public class EnemyHealth : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    // Immune
+    public void EnableInvulnerability()
+    {
+        invulnerable = true;
+        Physics2D.IgnoreLayerCollision(8, 7, true); // 8 = Boss, 7 = Player
+    }
+
+    // Turn off immune
+    public void DisableInvulnerability()
+    {
+        invulnerable = false;
+        Physics2D.IgnoreLayerCollision(8, 7, false);
+    }
+
 }
