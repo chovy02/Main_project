@@ -24,6 +24,15 @@ public class BossCombat : MonoBehaviour
     [SerializeField] private BoxCollider2D boxCollider;
     [SerializeField] private LayerMask playerLayer;
 
+    [Header("Ranged Attack")]
+    [SerializeField] private Transform firepoint; 
+    [SerializeField] private BossProjectile[] rangedProjectiles;
+
+    [Header("Lazer Attack")]
+    [SerializeField] private Transform lazerPoint;            
+    [SerializeField] private LazerProjectile[] lazerProjectiles; 
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -107,15 +116,57 @@ public class BossCombat : MonoBehaviour
 
     public void RangedAttack()
     {
-        // Instantiate projectile here
-        Debug.Log("Ranged Attack Triggered");
+        int index = FindInactiveProjectile();
+        BossProjectile projectile = rangedProjectiles[index];
+
+        projectile.transform.position = firepoint.position;
+
+        Vector2 direction = (Vector2)(player.position) - (Vector2)firepoint.position;
+
+        projectile.Launch(direction);
+
+        Debug.Log("Boss fired a ranged projectile!");
     }
+
+
+    private int FindInactiveProjectile()
+    {
+        for (int i = 0; i < rangedProjectiles.Length; i++)
+        {
+            if (!rangedProjectiles[i].gameObject.activeInHierarchy)
+                return i;
+        }
+        return 0; 
+    }
+
 
     public void LazerAttack()
     {
-        // Lazer Attack
-        Debug.Log("Lazer Attack Triggered");
+        int index = FindInactiveLazer();
+        LazerProjectile lazer = lazerProjectiles[index];
+
+        lazer.transform.position = lazerPoint.position;
+
+        Vector2 direction = (Vector2)(player.position) - (Vector2)lazerPoint.position;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        lazer.transform.rotation = Quaternion.Euler(0f, 0f, angle);
+
+        lazer.ActivateLazer();
+
+        Debug.Log("Boss fired a lazer!");
     }
+
+    private int FindInactiveLazer()
+    {
+        for (int i = 0; i < lazerProjectiles.Length; i++)
+        {
+            if (!lazerProjectiles[i].gameObject.activeInHierarchy)
+                return i;
+        }
+        return 0; // fallback
+    }
+
 
     public void Heal()
     {
