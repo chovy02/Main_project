@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Health : MonoBehaviour
 {
+    private Audio sound;
     [Header("Health")]
     [SerializeField] private float startingHealth;
     public float currentHealth { get; private set; }
@@ -25,6 +26,7 @@ public class Health : MonoBehaviour
         currentHealth = startingHealth;
         animator = GetComponent<Animator>();
         spriteRend = GetComponent<SpriteRenderer>();
+        sound = GameObject.FindGameObjectWithTag("audio").GetComponent<Audio>();
     }
 
     public void TakeDamage(float _damage)
@@ -37,6 +39,7 @@ public class Health : MonoBehaviour
         {
             animator.SetTrigger("hurt");
             StartCoroutine(Invunerability());
+            sound.Playvfx(sound.hurtClip);
         }
         else
         {
