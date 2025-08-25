@@ -11,6 +11,8 @@ public class Audio : MonoBehaviour
 
     public AudioClip victoryClip;
 
+    private PauseMenu paused;
+
     void Start()
     {
         musicSource.clip = musicClip;
