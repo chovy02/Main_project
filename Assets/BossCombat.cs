@@ -12,6 +12,7 @@ public class BossCombat : MonoBehaviour
     private float rangedTimer;
     private float lazerTimer;
 
+    private bool healingInProgress = false;
     private bool hasHealed = false;
     private Animator animator;
     private EnemyHealth health;
@@ -47,19 +48,23 @@ public class BossCombat : MonoBehaviour
         rangedTimer -= Time.deltaTime;
         lazerTimer -= Time.deltaTime;
 
+        if (!hasHealed && health.currentHealth <= health.startingHealth * 0.3f && !healingInProgress)
+        {
+            hasHealed = true;
+            healingInProgress = true;
+            animator.SetTrigger("heal");
+            return;
+        }
+
+        if (healingInProgress) return;
+
         if (blockTimer <= 0f)
         {
             blockTimer = blockCooldown;
             animator.SetTrigger("block");
             return;
         }
-
-        if (!hasHealed && health.currentHealth <= health.startingHealth * 0.3f)
-        {
-            hasHealed = true;
-            animator.SetTrigger("heal");
-            return;
-        }
+        
 
         if (hasHealed && lazerTimer <= 0f)
         {
@@ -173,6 +178,12 @@ public class BossCombat : MonoBehaviour
         health.AddHealth(health.startingHealth * 0.3f);
         Debug.Log("Healed");
     }
+
+    public void FinishHeal()
+    {
+        healingInProgress = false;
+    }
+
 
     private void OnDrawGizmos()
     {
