@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public float startingHealth;
     public float currentHealth { get; private set; }
     private Animator animator;
-    private bool dead;
+    private bool dead = false;
 
     [Header("iFrames")]
     [SerializeField] private float iFramesDuration;
@@ -48,6 +48,11 @@ public class EnemyHealth : MonoBehaviour
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
+    }
+
+    public bool getDead()
+    {
+        return dead;
     }
 
     private IEnumerator Invunerability()
