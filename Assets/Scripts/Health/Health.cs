@@ -49,7 +49,9 @@ public class Health : MonoBehaviour
                 GetComponent<PlayerController>().enabled = false;
                 dead = true;
 
-                gameover.SetUp();            }
+                gameover.SetUp();    
+                
+            }
         }
     }
 

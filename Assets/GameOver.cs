@@ -6,8 +6,9 @@ public class GameOver : MonoBehaviour
     private Audio sound;
     public void SetUp()
     {
-        sound.Playvfx(sound.defeatClip);
         gameObject.SetActive(true);
+        sound.GetComponent<AudioSource>().Stop();
+        sound.Playvfx(sound.defeatClip);
     }
     private void Awake()
     {
