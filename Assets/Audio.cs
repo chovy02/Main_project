@@ -10,6 +10,7 @@ public class Audio : MonoBehaviour
     public AudioClip defeatClip;
 
     public AudioClip victoryClip;
+    public AudioClip pickupClip;
 
     private PauseMenu paused;
 
